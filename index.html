@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>パソコン部卒業ムービー</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <div class="head">
+            <p class="headline">期待の新星たちからの感謝を今、その手に</p>
+            <p class="body">
+                にぎやかで少しうるさいけれど、何かを生み出す力に満ちあふれていたパソコン部の日々。
+                技術を磨きながらどんどん成長していく仲間と過ごした時間で生まれた感謝が、羨望が、
+                この映像の中に詰まっています。
+                笑い合い、切磋琢磨し、未来に向けて進んだあの瞬間を、いつでもどこでも振り返れる特別な記録。
+                卒業しても、パソコン部の熱があなたのそばにあります！
+            </p>
+            <div class="elements">
+                <p class="elements-label">・デジタル版</p>
+                <p class="elements-body">いつでも、どこでも、あの日の自分たちに戻れる。Web配信で永久保存！</p>
+                <button class="download" onclick="location.href='DL-Page/index.html'">Download here!</button>
+            </div>
+            <div class="elements">
+                <p class="elements-label">・パッケージ版(DVD)</p>
+                <p class="elements-body">手に取れる、先輩方への思い。DVDケースに収められた気持ちが、未来の思い出となります</p>
+                <p class="elements-body">2024/11/06(水)に配布予定！次回の部活動をお待ちください。</p>
+            </div>
+        </div>
+        <div class="introducing-content">
+            <p class="introducing-content-headline">CONTENTS</p>
+
+            <div class="slideshow-container">
+                <!-- スライドの画像 -->
+                <div class="slide">
+                    <img src="introduce_content1.png" style="width:100%">
+                </div>
+                <div class="slide">
+                    <img src="introduce_content2.png" style="width:100%">
+                </div>
+                <div class="slide">
+                    <img src="introduce_content3.png" style="width:100%">
+                </div>
+
+                <!-- 矢印 -->
+                <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+                <a class="next" onclick="changeSlide(1)">&#10095;</a>
+            </div>
+
+            <div class="dots">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
+        <div class="credits">
+            <p class="credits-headline">CREDITS</p>
+            <a class="credits-body" href="https://manjubox.net/ymm4/">編集 YMM4</a>
+            <p class="credits-body">撮影協力 パソコン部員方</p>
+            <p class="credits-body">Special-Thanks 偉大なる先輩方</p>
+        </div>
+    </main>
+    <script>
+        let slideIndex = 1;
+        showSlide(slideIndex);
+
+        // スライドを次に進める、または戻る関数
+        function changeSlide(n) {
+            showSlide(slideIndex += n);
+        }
+
+        // 特定のスライドを表示する関数
+        function currentSlide(n) {
+            showSlide(slideIndex = n);
+        }
+
+        // スライドを表示する関数
+        function showSlide(n) {
+            let slides = document.getElementsByClassName("slide");
+            let dots = document.getElementsByClassName("dot");
+
+            // インデックスの調整
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+
+            // すべてのスライドを非表示にする
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            // すべてのドットのアクティブクラスを削除
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+
+            // 現在のスライドとドットを表示
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+    </script>
+</body>
+
+</html>
+<!--Congratulation on your graduation! Thank seniors!-->
