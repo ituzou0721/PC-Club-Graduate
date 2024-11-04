@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>卒業記念DLページ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+    <div class="head">
+        <p class="headline">デジタル版のダウンロードが完了しました</p>
+        <p class="body">いつでも、どこでも、あの日の自分たちに戻れる。Web配信で永久保存！</p>
+        <a class="download" href="sotugyou_omedeto.mp4" download="卒業記念ムービー.mp4">ダウンロードされない場合はここをクリック</button>
+    </div>
+    </main>
+    <script>
+        // ページが読み込まれたときに自動的にダウンロードが開始される
+        window.onload = function () {
+            // ダウンロードするファイルのURL（ここではexample.txtというファイルを想定）
+            const fileUrl = "sotugyou_omedeto.mp4"; // ダウンロードしたいファイルのパスまたはURL
+
+            // aタグを生成して、href属性にダウンロードするファイルのURLを指定
+            const link = document.createElement("a");
+            link.href = fileUrl;
+
+            // ダウンロードするファイル名を指定
+            link.download = "卒業記念ムービー.mp4"; // 保存時のファイル名
+
+            // aタグをクリックしてダウンロードをトリガー
+            link.click();
+        };
+    </script>
+</body>
+</html>
